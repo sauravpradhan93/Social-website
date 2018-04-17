@@ -1,0 +1,33 @@
+<div class="navbar-header">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span [routerLink]="['']">VLOGS</span>
+          <button  mat-button class="signup-btn" [routerLink]="['/signup']">Sign Up</button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    </div>
+<div class="log-in-form">
+  <mat-card>   
+    <mat-card-title>Log In</mat-card-title>
+    <mat-card-content>
+       <table class="full-width" cellspacing="0">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Username" name="username">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Password" type="password" name="password">
+      </mat-form-field>
+         </table>
+
+    <button mat-raised-button [routerLink]="['/main']">Log In</button>
+  </mat-card-content>
+</mat-card>
+</div>
+<div class="pics-carousel">
+<carousel>
+      <slide>
+        <img src="" alt="First slide" style="display:block;width:100%;">
+      </slide>
+      </carousel>
+</div>

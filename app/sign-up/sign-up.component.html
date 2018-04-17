@@ -1,0 +1,72 @@
+<div class="navbar-header">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span [routerLink]="['']">VLOGS</span>
+          <button  mat-button class="signup-btn" [routerLink]="['/signup']">Sign Up</button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    </div>
+<mat-card>
+<mat-vertical-stepper [linear]="isLinear" >
+  
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="First name" formControlName="firstCtrl" required >
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Last name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <mat-radio-group class="Sex">
+          <mat-radio-button value="1">Male</mat-radio-button>
+          <mat-radio-button value="2">Female</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br/>
+      <div>
+        <button mat-raised-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Enter you email</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Enter Password</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password" formControlName="thirdCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Confirm password" type="password" formControlName="thirdCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    
+    <div>
+      <br/>
+      <button mat-raised-button matStepperPrevious>Back</button>
+      <button mat-raised-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+  
+</mat-vertical-stepper>
+</mat-card>  
